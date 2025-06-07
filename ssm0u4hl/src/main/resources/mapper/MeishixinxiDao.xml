@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.MeishixinxiDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.MeishixinxiEntity" id="meishixinxiMap">
+        <result property="meishimingcheng" column="meishimingcheng"/>
+        <result property="meishileixing" column="meishileixing"/>
+        <result property="zhuliao" column="zhuliao"/>
+        <result property="kouwei" column="kouwei"/>
+        <result property="meishijieshao" column="meishijieshao"/>
+        <result property="meishitupian" column="meishitupian"/>
+        <result property="cantingmingcheng" column="cantingmingcheng"/>
+        <result property="shangjiazhanghao" column="shangjiazhanghao"/>
+        <result property="sfsh" column="sfsh"/>
+        <result property="shhf" column="shhf"/>
+        <result property="thumbsupnum" column="thumbsupnum"/>
+        <result property="crazilynum" column="crazilynum"/>
+        <result property="clicktime" column="clicktime"/>
+        <result property="clicknum" column="clicknum"/>
+        <result property="price" column="price"/>
+        <result property="onelimittimes" column="onelimittimes"/>
+        <result property="alllimittimes" column="alllimittimes"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.MeishixinxiVO" >
+		SELECT * FROM meishixinxi  meishixinxi         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.MeishixinxiVO" >
+		SELECT  meishixinxi.* FROM meishixinxi  meishixinxi
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.MeishixinxiView" >
+
+		SELECT  meishixinxi.* FROM meishixinxi  meishixinxi 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.MeishixinxiView" >
+		SELECT * FROM meishixinxi  meishixinxi <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+
+	
+</mapper>
